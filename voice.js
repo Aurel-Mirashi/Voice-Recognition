@@ -24,7 +24,9 @@ btn.addEventListener('click', () => {
     message.textContent = '';
     errorMessage.textContent = '';
     container.style.background = 'rgba(51, 51, 51, 0.6)'
-    recognition.start()
+
+    localStorage.getItem('username') && localStorage.getItem('password') ? recognition.start() :
+     window.location.replace('/home/ardit/Desktop/Voice%20Recognition/views/signup.html')
 })
 
 recognition.onresult = function (event) {
@@ -57,4 +59,5 @@ recognition.onspeechend = function () {
 recognition.onerror = function () {
     errorMessage.classList.remove('none')
 }
+
 

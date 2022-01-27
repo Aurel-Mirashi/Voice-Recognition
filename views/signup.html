@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="auth.css">
+    <title>Signup</title>
+</head>
+
+<body>
+    <form id="signup">
+        <div class='firstName'>
+            <label>Name:</label>
+            <input type="text" name="firstName" placeholder="Enter your name">
+        </div>
+        <div class='username'>
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class='password'>
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="Enter your password" required minlength="6" maxlength="20">
+        </div>
+        <div class="submit">
+            <input type="submit" value="Sign Up">
+        </div>
+    </form>
+
+    <script defer>
+        const form = document.getElementById('signup');
+
+        //Global variables for input
+        var firstName;
+        var username;
+        var password;
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            //Getting form values
+            firstName = form.firstName.value;
+            username = form.username.value;
+            password = form.password.value;
+
+
+            if (localStorage.length === 0) {
+                localStorage.setItem('name', firstName);
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+                form.reset();
+                window.location.replace('/home/ardit/Desktop/Voice%20Recognition/index.html')
+            }
+            
+
+        })
+
+    </script>
+</body>
+
+</html>

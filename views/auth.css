@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    line-height: 1.7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#login ,
+#signup{
+    height: 100vh;
+    background: rgba(51, 51, 51, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+input[type = "text"],
+input[type = "password"],
+input[type = "text"]:focus,
+input[type = "password"]:focus{
+    margin:14px 0;
+    border:0;
+    outline:0;
+    padding:1rem;
+    width:100%;
+}
+
+::placeholder,
+input:focus::-webkit-input-placeholder 
+{
+  color:#777;
+  font-size:14px;
+}
+input[type="submit"]{
+    margin:14px 0;
+    display:inline-block;
+    width:100px;
+    padding: 0.88rem;
+    font-size:14px;
+    border:0;
+    outline:0;
+    border-radius: 10px;
+    background: crimson;
+    transition: all 0.6s linear;
+    color: white;
+    cursor: pointer;
+}

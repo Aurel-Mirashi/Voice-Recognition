@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="../style.css">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <form id="login">
+        <div class='username'>
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class='password'>
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="Enter your password" required
+                minlength="6" maxlength="20">
+        </div>
+        <div class="submit">
+            <input type="submit" value="Log In">
+        </div>
+
+        <p class="message-error none">
+            Your credentials do not match!
+        </p>
+    </form>
+
+    <script defer>
+        const form = document.getElementById('login');
+        const errorMessage = document.querySelector('.message-error')
+
+        //Global variables for input
+        var username;
+        var password;
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            //Getting form values
+            username = form.username.value;
+            password = form.password.value;
+
+
+            const signedUpUser = {
+                userName: username === localStorage.getItem('username') ? username : '',
+                userPassword: password === localStorage.getItem('password') ? password : ''
+            }
+
+            signedUpUser && signedUpUser.userName.length > 0 && signedUpUser.userPassword.length > 0 ?
+                window.location.replace('/home/ardit/Desktop/Voice%20Recognition/index.html') : 
+                errorMessage.classList.remove('none');
+
+            !localStorage.getItem('username') && !localStorage.getItem('password') === 0 ? 
+              window.location.replace('/home/ardit/Desktop/Voice%20Recognition/views/signup.html') : ''
+
+
+        })
+    </script>
+</body>
+
+</html>
