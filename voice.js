@@ -4,6 +4,7 @@ const btn = document.querySelector('.btn');
 const message = document.querySelector('.message')
 const errorMessage = document.querySelector('.message-error');
 const container = document.getElementById('container');
+const btnLogout = document.querySelector('.btn-logout');
 
 //Basic setup
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
@@ -18,6 +19,8 @@ recognition.grammars = speechRecognitionList;
 recognition.lang = 'en-US';
 recognition.interimResults = false;
 
+
+if(!localStorage.getItem('username') && !localStorage.getItem('password')) btnLogout.style.display='none'
 
 //Adding functionality
 btn.addEventListener('click', () => {
