@@ -7,6 +7,10 @@ body{
     line-height: 1.7;
     font-family: Arial, Helvetica, sans-serif;
 }
+a{
+    text-decoration: none;
+    color:#333;
+}
 #login ,
 #signup{
     height: 100vh;
@@ -48,4 +52,11 @@ input[type="submit"]{
     transition: all 0.6s linear;
     color: white;
     cursor: pointer;
+}
+.account-prompt{
+    margin:0 7.5px;
+}
+.btn-prompt{
+   color: white;
+   font-size:16px;
 }
